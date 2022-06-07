@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function App() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const getUsers = async () => {
+      const url = `https://randomuser.me/api/?results=10`;
+      const { data } = await axios.get(url);
+      console.log(data);
+      setUsers(data?.results);
+    };
+    getUsers();
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +27,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React {users?.length}
         </a>
       </header>
     </div>
