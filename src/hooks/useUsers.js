@@ -1,20 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useUsers = () => {
+const useUsers = (uri) => {
     const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getUsers = async () => {
-            const url = `https://randomuser.me/api/?results=10`;
+            const url = uri;
             const { data } = await axios.get(url);
-            console.log(data);
             setUsers(data?.results);
+            setLoading(false);
         };
         getUsers();
-    }, []);
+    }, [uri]);
 
-    return [users];
+    return [users, loading];
 };
 
 export default useUsers;

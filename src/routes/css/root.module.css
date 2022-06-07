@@ -43,6 +43,7 @@ th {
     td,
     tr {
         display: block;
+        white-space: unset;
     }
 
     /* Hide table headers (but not display: none;, for accessibility) */

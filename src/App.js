@@ -12,7 +12,7 @@ function App() {
           element={<Root />}
         />
         <Route
-          path='/:id'
+          path='/:email'
           element={<User />}
         />
       </Routes>
