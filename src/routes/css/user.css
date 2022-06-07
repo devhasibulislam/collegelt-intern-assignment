@@ -1,0 +1,49 @@
+img {
+    max-width: 100%;
+}
+
+.user-thumb{
+    border-radius: 50%;
+}
+
+#mockup-tab{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.browser-mockup {
+    border-top: 2em solid rgba(230, 230, 230, 0.7);
+    box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    border-radius: .5rem;
+    padding: 2rem;
+}
+
+.browser-mockup:before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: -1.25em;
+    left: 1em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: #f44;
+    box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+}
+
+#phone-number{
+    background-color: #90bd46;
+    padding: 0rem .5rem;
+    width: fit-content;
+    margin: .2rem auto;
+    border-radius: 1rem;
+    color: white;
+}
+
+#dob{
+    border-bottom: 2px solid #ffbe62;
+    width: fit-content;
+    margin: .5rem auto;
+    border-radius: 50%;
+}

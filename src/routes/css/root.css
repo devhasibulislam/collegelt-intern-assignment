@@ -4,13 +4,17 @@ table {
     margin: 50px auto;
 }
 
+.table-wrapper{
+    margin-top: 100px;
+}
+
 /* Zebra striping */
 tr:nth-of-type(odd) {
     background: #eee;
 }
 
 th {
-    background: #3498db;
+    background: #ff4b4a;
     color: white;
     font-weight: bold;
 }
@@ -80,4 +84,25 @@ th {
         color: #000;
         font-weight: bold;
     }
+}
+
+.browser-mockup {
+    border-top: 2em solid rgba(230, 230, 230, 0.7);
+    box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    border-radius: .5rem;
+    padding: 2rem;
+}
+
+.browser-mockup:before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: -1.25em;
+    left: 1em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: #f44;
+    box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
 }

@@ -1,17 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import useUsers from '../hooks/useUsers';
-import './css/user.module.css';
+import './css/user.css';
 
 const User = () => {
     const { email } = useParams();
     const user = JSON.parse(localStorage.getItem('user'));
 
-    console.log(user);
-    
+    user?.email === email && console.log(user);
+
+
     return (
-        <div>
-            <p>This is User route: {user?.email} </p>
+        <div
+            id='mockup-tab'
+        >
+            {
+                user?.email === email
+                &&
+                <div class="browser-mockup">
+                    <img
+                        src={user?.picture?.large}
+                        alt="user_thumbnail"
+                        className='user-thumb'
+                    />
+                    <p id='phone-number'>phone: <b>{user?.phone}</b></p>
+                    <p id='dob'>date of birth: <b>{user?.dob?.date.split('T')[0]}</b></p>
+                    <p id=''></p>
+                </div>
+            }
         </div>
     );
 };
