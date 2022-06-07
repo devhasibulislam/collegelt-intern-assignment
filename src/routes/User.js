@@ -6,9 +6,6 @@ const User = () => {
     const { email } = useParams();
     const user = JSON.parse(localStorage.getItem('user'));
 
-    user?.email === email && console.log(user);
-
-
     return (
         <div
             id='mockup-tab'
@@ -16,7 +13,7 @@ const User = () => {
             {
                 user?.email === email
                 &&
-                <div class="browser-mockup">
+                <div className="browser-mockup">
                     <img
                         src={user?.picture?.large}
                         alt="user_thumbnail"
