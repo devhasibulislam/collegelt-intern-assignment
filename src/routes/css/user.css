@@ -47,3 +47,10 @@ img {
     margin: .5rem auto;
     border-radius: 50%;
 }
+
+#timer{
+    border-bottom: 2px dashed #90bd46;
+    width: fit-content;
+    margin: .5rem auto;
+    border-radius: 10%;
+}
