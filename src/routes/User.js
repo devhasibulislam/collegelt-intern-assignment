@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './css/user.css';
 
 const User = () => {
     const { email } = useParams();
     const user = JSON.parse(localStorage.getItem('user'));
+    const navigate = useNavigate();
 
     const [timer, setTimer] = useState('');
     const [loading, setLoading] = useState(true);
@@ -19,11 +20,6 @@ const User = () => {
         } else {
             setCountDownTo.setFullYear(nextYear - 1);
         }
-
-        /* console.log(setCountDownTo.getMonth(), 'user month');
-        console.log(setCountDownTo.getDay(), 'user day');
-        console.log(new Date().getMonth(), 'current month');
-        console.log(new Date().getDate(), 'current day'); */
 
         const getCountDownTo = setCountDownTo.getTime();
 
@@ -46,6 +42,11 @@ const User = () => {
         }, 1000);
     }, [user?.dob?.date]);
 
+    const goToHome = () => {
+        navigate('/');
+        localStorage.removeItem('user');
+    };
+
     return (
         <div
             id='mockup-tab'
@@ -65,6 +66,7 @@ const User = () => {
                     {loading && 'loading...'}
                 </div>
             }
+            <span id='home' onClick={goToHome}>🏡</span>
         </div>
     );
 };

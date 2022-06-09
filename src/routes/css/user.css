@@ -9,6 +9,7 @@ img {
 #mockup-tab{
     margin-top: 100px;
     text-align: center;
+    position: relative;
 }
 
 .browser-mockup {
@@ -53,4 +54,12 @@ img {
     width: fit-content;
     margin: .5rem auto;
     border-radius: 10%;
+}
+
+#home {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: larger;
+    cursor: pointer;
 }
